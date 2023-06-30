@@ -40,6 +40,14 @@
     //データを保存する
     file_put_contents('survey.txt', $data, FILE_APPEND);
 
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      // POST：フォームからの投稿などのとき
+    } else {
+      // GET：リンクのクリックによる表示のリクエストなどのとき
+      header('Location: /');
+      exit();
+    }
+
   ?>
   <div class="column-wrap">
     <div class="side-container">
